@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .form-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-action button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d0d0d0;
+        }
+
+        .toggle-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .toggle-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // Add an event listener for the form submission
+        window.onload = function() {
+            const loginForm = document.getElementById('login-form');
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                const username = document.getElementById('login-username').value;
+                const phone = document.getElementById('login-phone').value;
+                const password = document.getElementById('login-password').value;
+
+                // Check if credentials match
+                if (username === "hack me" && phone === "5628340956" && password === "hack_me") {
+                    window.location.href = "home.html"; // Redirect to home.html
+                } else {
+                    alert("Invalid credentials. Please try again."); // Show error message
+                }
+            });
+        };
+
+        // Function to toggle between login and signup forms
+        function toggleForm() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <form id="login-form">
+            <div class="form-title">Login</div>
+            <div class="form-group">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="login-phone">Phone Number</label>
+                <input type="text" id="login-phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-action">
+                <button type="submit" class="btn-primary">Login</button>
+            </div>
+            <div class="toggle-link" onclick="toggleForm()">Don't have an account? Signup</div>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signup-form" style="display: none;">
+            <div class="form-title">Signup</div>
+            <div class="form-group">
+                <label for="signup-username">Username</label>
+                <input type="text" id="signup-username" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-phone">Phone Number</label>
+                <input type="text" id="signup-phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-repassword">Re-enter Password</label>
+                <input type="password" id="signup-repassword" placeholder="Re-enter your password" required>
+            </div>
+            <div class="form-action">
+                <button type="submit" class="btn-primary">Signup</button>
+            </div>
+            <div class="toggle-link" onclick="toggleForm()">Already have an account? Login</div>
+        </form>
+    </div>
+</body>
+</html>

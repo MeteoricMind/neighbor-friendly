@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Profile Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .profile {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .profile .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .profile .info {
+            font-size: 1.2em;
+        }
+
+        .navigator {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigator div {
+            flex: 1;
+            text-align: center;
+            font-size: 0.9em;
+            position: relative;
+            transition: background-color 0.2s;
+        }
+
+        .navigator div:hover {
+            background-color: #d0d0d0;
+        }
+
+        .navigator div:active {
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }
+
+        .navigator div i {
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .navigator div span {
+            cursor: pointer;
+        }
+
+        .navigator div span:hover {
+            text-decoration: underline;
+        }
+
+        .middle-nav {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .middle-nav button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .middle-nav button:active {
+            transform: scale(1.1);
+        }
+
+        .middle-nav button:hover {
+            background-color: #0056b3;
+        }
+
+        .middle-nav button:nth-child(1) {
+            onclick: window.location.href = 'post.html';
+        }
+
+        .middle-nav button:nth-child(2) {
+            onclick: window.location.href = 'react.html';
+        }
+
+        .middle-nav button:nth-child(3) {
+            onclick: window.location.href = 'map.html';
+        }
+    </style>
+</head>
+<body>
+    <div class="profile">
+        <div class="avatar"></div>
+        <div class="info">
+            <p>Name</p>
+            <p>Phone Number</p>
+        </div>
+        <div class="middle-nav">
+            <button onclick="window.location.href='post.html'">Post</button>
+            <button onclick="window.location.href='react.html'">React</button>
+            <button onclick="window.location.href='map.html'">MAP</button>
+        </div>
+    </div>
+
+    <div class="navigator">
+        <div onclick="window.location.href='home.html'">
+            <i>&#x1F3E0;</i>
+            <span>Home</span>
+        </div>
+        <div onclick="window.location.href='meeting.html'">
+            <i>&#x1F4AC;</i>
+            <span>Meeting</span>
+        </div>
+        <div onclick="window.location.href='shop.html'">
+            <i>&#x1F6D2;</i>
+            <span>Shop</span>
+        </div>
+        <div onclick="window.location.href='profile.html'">
+            <i>&#x1F464;</i>
+            <span>Profile</span>
+        </div>
+    </div>
+</body>
+</html>
