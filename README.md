@@ -3,6 +3,10 @@
 ## Show some :heart: and star the repo to support the project.
 Neighbor Help App is a mobile-responsive web application designed to foster support and connection within local communities. It allows users to collaborate, share skills, schedule meetings, and shop for community-driven resources.
 ## Note
+* for user name-: hack me
+* for phone number -: 5628340956
+* for password -: hack_me
+
 This repository is still under development and I will continue to add more features to it.
 
 ## Features
